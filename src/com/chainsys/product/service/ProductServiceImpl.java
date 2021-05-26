@@ -37,7 +37,14 @@ public class ProductServiceImpl implements ProductService {
 			return Product;
 		}
 	}
-	
+	public Product displayId(int id) throws ProductNotFoundException {
+		Product Product = dao.displayId(id);
+		if (Product == null) {
+			throw new ProductNotFoundException("Product Id Not Found");
+		} else {
+			return Product;
+		}
+	}
 
 	@Override
 	public void save(Product Product) {

@@ -11,7 +11,7 @@ public interface ProductService {
 	Product findById(int id) throws ProductNotFoundException;
 	
 	Product findByName(String name) throws ProductNotFoundException;
-
+	Product displayId(int id) throws ProductNotFoundException;
 	void save(Product Product);
 
 	void update(Product Product) throws ProductNotFoundException;

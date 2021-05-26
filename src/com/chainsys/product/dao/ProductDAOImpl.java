@@ -75,6 +75,21 @@ public class ProductDAOImpl implements ProductDAO {
 		}
 		return product;
 	}
+	
+	public Product displayId(int id) {
+		Product product = null;
+		try {
+			pstmt = con.prepareStatement("select name from product_2598 where id=?");
+			pstmt.setInt(1, id);
+	rs = pstmt.executeQuery();
+		if (rs.next()) {
+				product = new Product(rs.getInt("id"), rs.getString("name"), rs.getDate("expiry_date").toLocalDate());
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return product;
+	}
 
 	@Override
 	public void save(Product product) {
@@ -89,7 +104,7 @@ public class ProductDAOImpl implements ProductDAO {
 		}
 
 	}
-
+	
 	@Override
 	public void update(Product product) {
 		try {
