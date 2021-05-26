@@ -83,7 +83,7 @@ public class ProductDAOImpl implements ProductDAO {
 			pstmt.setInt(1, id);
 	rs = pstmt.executeQuery();
 		if (rs.next()) {
-				product = new Product(rs.getInt("id"), rs.getString("name"), rs.getDate("expiry_date").toLocalDate());
+				product = new Product( rs.getString("name"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

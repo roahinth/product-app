@@ -94,7 +94,7 @@ public class ProductClient {
 			break;
 		case 8:
 			System.out.println("display the product name");
-			System.out.println("display the product id");
+			System.out.println("enetr the product id");
 			int ind = scanner.nextInt();
 			try {
 				Product product = service.displayId(ind);
@@ -102,16 +102,6 @@ public class ProductClient {
 			}catch (ProductNotFoundException e) {
 			}
 			break;
-			
-//			System.out.println("Find the Product name");
-//			System.out.println("Enter the Product Id");
-//			id = scanner.nextInt();
-//			try {
-//				Product product = service.displayId(id);
-//				System.out.println(product);
-//			} catch (ProductNotFoundException e) {
-//			}
-//			break;
 		default:
 			break;
 		}

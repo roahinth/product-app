@@ -17,6 +17,12 @@ public class Product {
 		this.expiryDate = expiryDate;
 	}
 
+	
+	public Product(String name) {
+		super();
+		this.name = name;
+	}
+
 	public int getId() {
 		return id;
 	}
