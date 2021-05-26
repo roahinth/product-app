@@ -1,5 +1,6 @@
 package com.chainsys.product.dao;
-
+import java.util.List;
+import java.util.ArrayList;
 import java.sql.Connection;
 import java.sql.Date;
 import java.sql.DriverManager;
@@ -90,7 +91,19 @@ public class ProductDAOImpl implements ProductDAO {
 		}
 		return product;
 	}
-
+	public List<String> displayName() {
+		ArrayList<String> l = new ArrayList<>();
+		try {
+			pstmt = con.prepareStatement("select name from product_2598");
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				l.add(rs.getString("name"));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return l;
+	}
 	@Override
 	public void save(Product product) {
 		try {

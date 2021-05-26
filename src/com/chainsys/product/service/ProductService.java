@@ -1,5 +1,5 @@
 package com.chainsys.product.service;
-
+import java.util.List;
 import java.util.Set;
 
 import com.chainsys.product.exception.ProductNotFoundException;
@@ -17,5 +17,5 @@ public interface ProductService {
 	void update(Product Product) throws ProductNotFoundException;
 	void updateDate(Product Product) throws ProductNotFoundException;
 	void delete(int id) throws ProductNotFoundException;
-
+	public List<String> displayName();
 }

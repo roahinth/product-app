@@ -1,5 +1,5 @@
 package com.chainsys.product.test;
-
+import java.util.List;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
@@ -9,7 +9,6 @@ import com.chainsys.product.exception.ProductNotFoundException;
 import com.chainsys.product.model.Product;
 import com.chainsys.product.service.ProductService;
 import com.chainsys.product.service.ProductServiceImpl;
-
 public class ProductClient {
 	public static void main(String[] args) {
 
@@ -21,6 +20,7 @@ public class ProductClient {
 		System.out.println("Enter the choice");
 		Scanner scanner = new Scanner(System.in);
 		int choice = scanner.nextInt();
+		List<String> l;
 		switch (choice) {
 		case 1:
 			System.out.println("Find All Products");
@@ -101,6 +101,12 @@ public class ProductClient {
 				System.out.println(product);
 			}catch (ProductNotFoundException e) {
 			}
+			break;
+			
+		case 9:
+			System.out.println("View All Product Names");
+			l=service.displayName();
+			System.out.println(l);
 			break;
 		default:
 			break;

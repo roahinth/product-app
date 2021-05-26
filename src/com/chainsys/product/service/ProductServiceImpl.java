@@ -1,7 +1,7 @@
 package com.chainsys.product.service;
 
 import java.util.Set;
-
+import java.util.List;
 import com.chainsys.product.dao.ProductDAO;
 import com.chainsys.product.dao.ProductDAOImpl;
 import com.chainsys.product.exception.ProductNotFoundException;
@@ -45,7 +45,9 @@ public class ProductServiceImpl implements ProductService {
 			return Product;
 		}
 	}
-
+	public List<String> displayName() {
+		return dao.displayName();
+	}
 	@Override
 	public void save(Product Product) {
 		dao.save(Product);
