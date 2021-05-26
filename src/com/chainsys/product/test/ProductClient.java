@@ -39,9 +39,9 @@ public class ProductClient {
 			break;
 		case 3:
 			System.out.println("Update the Product Name Based on the Id");
-			date = "06/5/2019";
+			date = "07/05/2021";
 			dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-			Product updateProduct = new Product(4, "Pencil", LocalDate.parse(date, dateFormat));
+			Product updateProduct = new Product(2, "Pencil", LocalDate.parse(date, dateFormat));
 			try {
 				service.update(updateProduct);
 				productSet = service.findAll();
@@ -52,9 +52,9 @@ public class ProductClient {
 			break;
 		case 4:
 			System.out.println("Adding a Product");
-			date = "06/5/2019";
+			date = "06/05/2019";
 			dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-			Product newProduct = new Product(4, "Pencil", LocalDate.parse(date, dateFormat));
+			Product newProduct = new Product(3, "Parker", LocalDate.parse(date, dateFormat));
 			service.save(newProduct);
 			productSet = service.findAll();
 			System.out.println(productSet);
@@ -79,7 +79,19 @@ public class ProductClient {
 			} catch (ProductNotFoundException e) {
 			}
 			break;
+		case 7:
+			System.out.println("Update the Product Expiry Date Based on the Id");
+			date = "07/05/2021";
+			dateFormat = DateTimeFormatter.ofPattern("MM/dd/yyyy");
+			Product updateDate = new Product(2, "Pencil", LocalDate.parse(date, dateFormat));
+			try {
+				service.update(updateDate);
+				productSet = service.findAll();
+				System.out.println(productSet);
+			} catch (ProductNotFoundException e) {
 
+			}
+			break;
 		default:
 			break;
 		}

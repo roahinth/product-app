@@ -55,6 +55,17 @@ public class ProductServiceImpl implements ProductService {
 		}
 
 	}
+	
+	
+	public void updateDate(Product Product) throws ProductNotFoundException {
+		Product result = dao.findById(Product.getId());
+		if (result == null) {
+			throw new ProductNotFoundException("Product Id Not Found");
+		} else {
+			dao.updateDate(Product);
+		}
+
+	}
 
 	@Override
 	public void delete(int id) throws ProductNotFoundException {

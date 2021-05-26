@@ -14,6 +14,6 @@ public interface ProductDAO {
 	void save(Product product);
 
 	void update(Product product);
-
+	void updateDate(Product product);
 	void delete(int id);
 }

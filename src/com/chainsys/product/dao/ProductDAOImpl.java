@@ -103,6 +103,17 @@ public class ProductDAOImpl implements ProductDAO {
 
 	}
 
+	public void updateDate(Product product) {
+		try {
+			pstmt = con.prepareStatement("update product_2598 set name=? where id=?");
+			pstmt.setString(1, product.getName());
+			pstmt.setInt(2, product.getId());
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+	}
 	@Override
 	public void delete(int id) {
 		try {
