@@ -18,4 +18,6 @@ public interface ProductDAO {
 	void updateDate(Product product);
 	void delete(int id);
 	
-	public List<String> displayName();}
+	public List<String> displayName();
+	public List<Integer> displayId();
+}

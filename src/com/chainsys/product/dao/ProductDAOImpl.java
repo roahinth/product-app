@@ -104,6 +104,20 @@ public class ProductDAOImpl implements ProductDAO {
 		}
 		return l;
 	}
+	public List<Integer> displayId() {
+		ArrayList<Integer> f = new ArrayList<>();
+		try {
+			pstmt = con.prepareStatement("select id from product_2598");
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				f.add(rs.getInt("id"));
+			}
+			}catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return f;
+		
+	}
 	@Override
 	public void save(Product product) {
 		try {

@@ -48,6 +48,9 @@ public class ProductServiceImpl implements ProductService {
 	public List<String> displayName() {
 		return dao.displayName();
 	}
+	public List<Integer> displayId() {
+		return dao.displayId();
+	}
 	@Override
 	public void save(Product Product) {
 		dao.save(Product);

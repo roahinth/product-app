@@ -18,6 +18,11 @@ public class Product {
 	}
 
 	
+	public Product(int id) {
+		super();
+		this.id = id;
+	}
+
 	public Product(String name) {
 		super();
 		this.name = name;

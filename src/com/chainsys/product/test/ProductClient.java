@@ -21,6 +21,7 @@ public class ProductClient {
 		Scanner scanner = new Scanner(System.in);
 		int choice = scanner.nextInt();
 		List<String> l;
+		List<Integer> f;
 		switch (choice) {
 		case 1:
 			System.out.println("Find All Products");
@@ -107,6 +108,11 @@ public class ProductClient {
 			System.out.println("View All Product Names");
 			l=service.displayName();
 			System.out.println(l);
+			break;
+		case 10:
+			System.out.println("View All Product Id");
+			f=service.displayId();
+			System.out.println(f);
 			break;
 		default:
 			break;

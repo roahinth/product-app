@@ -18,4 +18,5 @@ public interface ProductService {
 	void updateDate(Product Product) throws ProductNotFoundException;
 	void delete(int id) throws ProductNotFoundException;
 	public List<String> displayName();
+	public List<Integer> displayId();
 }
